@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+
+    <main>
+      <section class="card-wrapper">
+        <div class="card-front">
+            <span class="card-number">0000 0000 0000 0000</span>
+            <div class="card-footer">
+              <span class="name">Jane Appleseed</span>
+              <span class="card-date">
+                <span id="mmText">00</span> 
+                /
+                <span id="yyText">00</span> 
+              </span>
+            </div>
+        </div>
+        <div class="card-back">
+          <span id="cvcText">000</span>
+        </div>
+      </section>
+  
+      <section class="form-wrapper">
+          <form class="form">
+            <label for="card-name">
+              Cardholder Name
+              <input id="card-name" type="text" placeholder="e.g. Jane Appleseed">
+            </label>
+            <p class="info" aria-live="polite"></p>
+            <label for="card-number">
+              Card Number
+              <input id="card-number" type="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="16"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            </label>
+            <p class="info" aria-live="polite"></p>
+            <div class="cvc-mmyy">
+              <label for="mm" class="labelyy labelmm">
+                Exp. Date (MM/YY)
+                <div>
+                  <input type="number" placeholder="MM" name="mm" id="mm" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                  <input type="number" placeholder="YY" name="yy" id="yy" maxlength="2"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                </div>
+                <p class="info" aria-live="polite"></p>
+              </label>
+              <label for="cvc" class="cvc">
+                CVC
+                <div>
+                  <input type="number" placeholder="e.g. 123" id="cvc" maxlength="3" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                </div>
+                  <p class="info" aria-live="polite"></p>
+              </label>
+            </div>
+            <button class="submit-btn">
+              Confirm
+            </button>
+          </form>
+      </section>
+
+            <!-- Completed -->
+            <article class="card-thanks hidden">
+              <img src="/images/icon-complete.svg" alt="complete" />
+              <p>Thank you!</p>
+              <p>We've added your card details</p>
+              <button class="end-btn">Continue</button>
+            </article>
+
+    </main>
+
+  <div class="attribution">
+    Challenge by 
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" style="text-decoration: none; color: black;">
+      <strong>Frontend Mentor</strong>
+    </a>. 
+    Coded by 
+    <a href="#" style="color: black; font-weight: 800;text-decoration: none;">Sandro</a>.
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
